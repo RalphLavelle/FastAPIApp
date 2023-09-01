@@ -1,0 +1,7 @@
+chromadb
+fastapi
+langchain
+openai
+pydantic
+python-dotenv
+unstructured
