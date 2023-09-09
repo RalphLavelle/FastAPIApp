@@ -3,8 +3,9 @@ async function fetchData(prompt) {
         const p = {
             text: prompt
         };
-        // Simulate an asynchronous operation, e.g., fetching data from an API
-        const response = await fetch('http://127.0.0.1:8000/', {
+        // const endpoint = "http://127.0.0.1:80/";
+        const endpoint = "https://rlfast3.azurewebsites.net/";
+        const response = await fetch(endpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -27,4 +28,4 @@ async function fetchData(prompt) {
 }
 
 // Call the async function
-fetchData("What's the book about?");
+fetchData("Did they ever go to Kerry, and if so, what did they do there?");

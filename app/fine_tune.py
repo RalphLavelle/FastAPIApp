@@ -1,6 +1,9 @@
+import os;
+openai_api_key = os.environ.get('OPENAI_API_KEY')
+
 # load the book
 from langchain.document_loaders import UnstructuredHTMLLoader
-loader = UnstructuredHTMLLoader("syktw.html")
+loader = UnstructuredHTMLLoader("app/syktw.html")
 book = loader.load()
 
 # split it into chunks

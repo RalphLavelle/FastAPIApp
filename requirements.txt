@@ -4,4 +4,6 @@ langchain
 openai
 pydantic
 python-dotenv
+tiktoken
 unstructured
+uvicorn
