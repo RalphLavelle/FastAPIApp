@@ -1,0 +1,100 @@
+@import './../variables.scss';
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        //border: solid 1px #00f;
+        margin: 1rem 0;
+        padding: 0 0.5rem;
+        @include respond-to(small) {
+            padding: 0 2rem;
+        }
+        @include respond-to(medium) {
+            padding: 0 6rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toc {
+    // border: solid 1px #f00;
+    .chapters {
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 1rem;
+        ul {
+            display: flex;
+            margin: 0;
+            li {
+                margin: 0.25rem;
+                button {
+                    font-size: 1rem;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    &:hover {
+                        color: #666;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.chapter {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    word-break: break-word;
+}
+
+.qanda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: map-get($colours, green);
+    //border: solid 1px map-get($colours, green);
+    //border-radius: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    // width: 100%;
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        @include respond-to(small) {
+            flex-direction: row;
+        }
+        input {
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            width: 100%;
+        }
+    }
+    .answer {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        form {
+            display: flex;
+            gap: 0.25rem;
+        }
+    }
+}
+
+.heading {
+    margin: 2rem 0 0 0;
+}

@@ -1,9 +1,14 @@
 import os;
 openai_api_key = os.environ.get('OPENAI_API_KEY')
 
-# load the book
-from langchain.document_loaders import UnstructuredHTMLLoader
-loader = UnstructuredHTMLLoader("app/syktw.html")
+# load syktw
+# from langchain.document_loaders import UnstructuredHTMLLoader
+# loader = UnstructuredHTMLLoader("books/syktw.html")
+# book = loader.load()
+
+# load Finnegan's
+from langchain.document_loaders import DirectoryLoader
+loader = DirectoryLoader("books/finnegans-wake")
 book = loader.load()
 
 # split it into chunks
