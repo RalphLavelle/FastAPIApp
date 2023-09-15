@@ -16,7 +16,8 @@ import files as files;
 app = FastAPI()
 
 # set up CORS
-origins = [os.environ.get('CLIENT_URL')]
+# origins = [os.environ.get('CLIENT_URL')]
+origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
