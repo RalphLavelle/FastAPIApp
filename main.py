@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
@@ -17,7 +16,7 @@ import files as files;
 app = FastAPI()
 
 # set up CORS
-origins = ["http://localhost:3000"]
+origins = [os.environ.get('CLIENT_URL')]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -26,14 +25,12 @@ app.add_middleware(
     allow_headers=["*"],
 ) 
 
-app.mount("/client", StaticFiles(directory="client", check_dir=False), name="client")
-
 class Prompt(BaseModel):
     text: str
 
 @app.get("/api")
 def read_root():
-    return { "answer": "Hello World13" }
+    return { "answer": "Hello World14" }
 
 @app.get("/api/books/{book_id}/parts/{part_id}/chapters/{chapter_id}")
 def read_book(book_id: str, part_id: int, chapter_id: int):
